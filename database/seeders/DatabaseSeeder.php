@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
             'site_email'       => 'suporte@alexandredias.com.br',
             'banner_title'     => 'Nova Coleção 2025',
             'banner_subtitle'  => 'Até 50% Off',
-            'banner_img'       => 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1800&auto=format&fit=crop',
+            'banner_img'       => 'assets/images/banner.png',
             'free_shipping_min'=> '1500',
         ];
         foreach ($settings as $k => $v) SiteSetting::set($k, $v);
