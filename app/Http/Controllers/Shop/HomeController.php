@@ -15,7 +15,7 @@ class HomeController extends Controller
             ->get();
 
         $settings = [
-            'banner_img'      => SiteSetting::get('banner_img'),
+            'banner_img'      => SiteSetting::get('banner_img', 'assets/images/banner-principal.jpg'),
             'banner_title'    => SiteSetting::get('banner_title', 'Nova Coleção 2025'),
             'banner_subtitle' => SiteSetting::get('banner_subtitle', 'Até 50% Off'),
         ];

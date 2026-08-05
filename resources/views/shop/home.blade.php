@@ -7,8 +7,8 @@
 
   <div class="banner-left-overlay">
     <span class="blo-season">Nova Temporada 2025</span>
-    <h2 class="blo-title">Dias<br>Sneakers</h2>
-    <p class="blo-desc">Os melhores tênis com entrega rápida e parcelamento em até 12x sem juros.</p>
+    <h2 class="blo-title">{{ $settings['banner_title'] }}</h2>
+    <p class="blo-desc">{{ $settings['banner_subtitle'] }}</p>
     <a href="{{ route('masculino') }}" class="blo-cta">Explorar Coleção</a>
 
     <div class="blo-coupon">
