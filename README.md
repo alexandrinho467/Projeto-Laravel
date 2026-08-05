@@ -41,7 +41,9 @@ Este projeto é uma loja virtual completa com:
 - Painel administrativo completo com rotas protegidas para usuários com papel `admin`
 - Configurações do site armazenadas em `site_settings`
 - Cadastro e edição de produtos, estoque, cupons e equipe
-- CRM básico para acompanhar contatos, negociações e histórico
+- CRM completo acessível pelo site para vendedores e administradores
+- Funil de vendas com acompanhamento de negociações e estágio do negócio
+- Histórico de contatos, tarefas e vendas, além de integração de mensagens
 - Sincronização de e-mails via IMAP para vendedores
 - Rota de webhooks para WhatsApp e Instagram
 
