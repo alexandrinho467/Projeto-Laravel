@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="banner-main">
-  <img src="{{ asset('assets/images/banner.png') }}" alt="Dias Sneakers">
+  <img src="/assets/images/banner-principal-2.jpg" alt="Dias Sneakers">
 
   <div class="banner-left-overlay">
     <span class="blo-season">Nova Temporada 2025</span>
