@@ -3,12 +3,12 @@
 @section('content')
 
 <section class="banner-main">
-  <img src="{{ asset($settings['banner_img']) }}" alt="Dias Sneakers">
+  <img src="{{ asset('assets/images/banner.png') }}" alt="Dias Sneakers">
 
   <div class="banner-left-overlay">
     <span class="blo-season">Nova Temporada 2025</span>
-    <h2 class="blo-title">{{ $settings['banner_title'] }}</h2>
-    <p class="blo-desc">{{ $settings['banner_subtitle'] }}</p>
+    <h2 class="blo-title">Nova Coleção 2025</h2>
+    <p class="blo-desc">Até 50% Off</p>
     <a href="{{ route('masculino') }}" class="blo-cta">Explorar Coleção</a>
 
     <div class="blo-coupon">
