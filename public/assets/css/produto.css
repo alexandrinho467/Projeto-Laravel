@@ -1,0 +1,992 @@
+/* ============================================================
+   PÁGINA DE PRODUTO — Dias Sneakers Luxury
+   ============================================================ */
+
+/* Breadcrumb override for product page */
+.breadcrumb {
+  padding: 18px 60px;
+  font-size: 0.65rem;
+}
+
+/* ============================================================
+   LAYOUT PRINCIPAL
+   ============================================================ */
+.product-page-section {
+  display: flex;
+  gap: 72px;
+  padding: 40px 60px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* ============================================================
+   GALERIA
+   ============================================================ */
+.product-gallery {
+  width: 55%;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  position: sticky;
+  top: 160px;
+}
+
+.thumb-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 72px;
+  flex-shrink: 0;
+}
+
+.thumb-item {
+  width: 72px;
+  height: 90px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  background: #fff;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.thumb-item:hover,
+.thumb-item.active { border-color: #000; }
+
+.main-img-container {
+  flex: 1;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  cursor: crosshair;
+  background: #fff;
+}
+
+.main-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+/* ============================================================
+   PAINEL DE INFORMAÇÕES
+   ============================================================ */
+.product-info-panel {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8px;
+}
+
+.product-badge {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 5px 14px;
+  align-self: flex-start;
+}
+
+.product-brand-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #6a5f52;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.product-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #111;
+  margin-top: -6px;
+}
+
+/* ============================================================
+   PREÇO
+   ============================================================ */
+.price-block {
+  border-top: 1px solid #e8e4df;
+  border-bottom: 1px solid #e8e4df;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.old-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  color: #bbb;
+}
+
+.old-price s { text-decoration: line-through; }
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.current-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: 0.02em;
+}
+
+.discount-tag {
+  background: #000;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  letter-spacing: 0.1em;
+}
+
+.installment {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  color: #888;
+  font-weight: 300;
+}
+
+/* ============================================================
+   SELETORES
+   ============================================================ */
+.selector-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.selector-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 400;
+  color: #333;
+  letter-spacing: 0.06em;
+}
+
+.selector-label strong { color: #111; font-weight: 600; }
+
+.selector-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.size-guide-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  letter-spacing: 0.06em;
+}
+
+/* Swatches de cor */
+.color-swatches { display: flex; gap: 8px; }
+
+.color-swatch {
+  width: 60px;
+  height: 72px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  background: #f5f0eb;
+  transition: border-color 0.2s;
+}
+
+.color-swatch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.color-swatch:hover,
+.color-swatch.active { border-color: #000; }
+
+/* Tamanhos */
+#sizes-panel { margin-bottom: 0; }
+
+/* ============================================================
+   BOTÕES DE AÇÃO
+   ============================================================ */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-buy-now {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+.btn-buy-now:hover {
+  background: #fff;
+  color: #000;
+}
+
+.add-fav-row {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-add-cart {
+  flex: 1;
+  background: transparent;
+  color: #000;
+  border: 1px solid #000;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+.btn-add-cart:hover {
+  background: #000;
+  color: #fff;
+}
+
+.btn-fav {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border: 1px solid #d0c9c0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-fav:hover { border-color: #000; color: #000; }
+.btn-fav.favorited { border-color: #000; color: #000; }
+.btn-fav.favorited svg { fill: #000; stroke: #000; }
+
+.size-warning {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  color: #c00;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   ENTREGA
+   ============================================================ */
+.delivery-section {
+  border-top: 1px solid #e8e4df;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cep-row { display: flex; }
+
+.cep-row input {
+  flex: 1;
+  border: 1px solid #d0c9c0;
+  border-right: none;
+  padding: 12px 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  outline: none;
+  transition: border-color 0.2s;
+  color: #000;
+  background: #fff;
+}
+
+.cep-row input:focus { border-color: #000; }
+.cep-row input::placeholder { color: #aaa; }
+
+.cep-row button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.cep-row button:hover { background: #333; }
+
+.shipping-loading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  color: #aaa;
+  padding: 6px 0;
+}
+
+.shipping-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0ece8;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.ship-info { display: flex; flex-direction: column; gap: 2px; }
+.ship-name { font-weight: 500; letter-spacing: 0.04em; }
+.ship-days { font-size: 0.68rem; color: #999; }
+.ship-price { font-weight: 500; letter-spacing: 0.04em; }
+.ship-price.gratis { color: #1a5c38; }
+
+/* ============================================================
+   DESCRIÇÃO
+   ============================================================ */
+.description-section {
+  background: #f5f0eb;
+  border-top: 1px solid #e8e4df;
+  padding: 72px 60px;
+}
+
+.description-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.description-col h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.description-col h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-top: 28px;
+  margin-bottom: 14px;
+  color: #111;
+}
+
+.description-col p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.84rem;
+  color: #444;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+.description-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description-col ul li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: #444;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.description-col ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #6a5f52;
+  font-weight: 500;
+}
+
+.product-ref {
+  margin-top: 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  color: #bbb;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   PRODUTOS RELACIONADOS
+   ============================================================ */
+.related-section {
+  padding: 72px 60px;
+  border-top: 1px solid #e8e4df;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.related-grid .product-card { cursor: pointer; }
+
+/* ============================================================
+   MODAL GUIA DE TAMANHOS
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 6000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.open { display: flex; }
+
+.size-modal {
+  background: #fff;
+  padding: 48px;
+  width: 520px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.modal-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #000;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+
+.close-modal:hover { opacity: 0.4; }
+
+.size-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+}
+
+.size-table th {
+  background: #000;
+  color: #fff;
+  padding: 12px 10px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.size-table td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid #f0ece8;
+  color: #555;
+  font-weight: 300;
+}
+
+.size-table tr:nth-child(even) td { background: #f9f7f4; }
+
+/* ============================================================
+   AVALIAÇÕES
+   ============================================================ */
+.reviews-section {
+  padding: 72px 60px;
+  border-top: 1px solid #e8e4df;
+  background: #fff;
+}
+
+.reviews-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.reviews-header { margin-bottom: 40px; }
+
+.reviews-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.reviews-avg {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.avg-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #111;
+  line-height: 1;
+}
+
+.star-row { display: flex; gap: 2px; }
+
+.star {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1;
+}
+
+.star--full  { color: #c8a96a; }
+.star--half  { color: #c8a96a; opacity: 0.55; }
+.star--empty { color: #ddd; }
+
+.reviews-count {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  color: #888;
+  letter-spacing: 0.04em;
+}
+
+/* List of reviews */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 60px;
+}
+
+.review-item {
+  padding: 28px 0;
+  border-bottom: 1px solid #f0ece8;
+}
+
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.review-stars { display: flex; gap: 2px; }
+.review-stars .star { font-size: 0.95rem; }
+
+.review-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: 0.04em;
+}
+
+.review-date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  color: #aaa;
+  margin-left: auto;
+}
+
+.review-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.84rem;
+  color: #444;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.review-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.review-img-wrap {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border: 1px solid #e8e4df;
+  display: block;
+  flex-shrink: 0;
+}
+
+.review-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.review-img-wrap:hover img { opacity: 0.85; }
+
+.review-video {
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #e8e4df;
+}
+
+.reviews-empty {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.84rem;
+  color: #aaa;
+  margin-bottom: 48px;
+  font-style: italic;
+}
+
+/* Review action buttons */
+.review-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.rev-edit-btn, .rev-delete-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid currentColor;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.rev-edit-btn {
+  color: #111;
+  border-color: #111;
+}
+.rev-edit-btn:hover { background: #111; color: #fff; }
+
+.rev-delete-btn {
+  color: #c00;
+  border-color: #c00;
+}
+.rev-delete-btn:hover { background: #c00; color: #fff; }
+
+/* Edit review modal */
+.rev-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.rev-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px 36px;
+}
+
+.rev-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.rev-modal-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #111;
+  margin: 0;
+}
+
+.rev-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #999;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.rev-modal-close:hover { color: #111; }
+
+.rev-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.rev-cancel-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #555;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.rev-cancel-btn:hover { border-color: #111; color: #111; }
+
+/* Form */
+.review-form-wrap {
+  border-top: 2px solid #000;
+  padding-top: 40px;
+  max-width: 680px;
+}
+
+.review-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+}
+
+.review-success {
+  background: #f0f7f0;
+  border: 1px solid #b2d8b2;
+  color: #1a5c38;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  letter-spacing: 0.03em;
+}
+
+.review-form { display: flex; flex-direction: column; gap: 22px; }
+
+.rf-row { display: flex; flex-direction: column; gap: 6px; }
+
+.rf-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #333;
+}
+
+.rf-label small {
+  font-size: 0.62rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #aaa;
+}
+
+.rf-input,
+.rf-textarea {
+  border: 1px solid #d0c9c0;
+  padding: 12px 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: #111;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.rf-input:focus,
+.rf-textarea:focus { border-color: #000; }
+
+.rf-textarea { min-height: 110px; }
+
+.word-counter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  color: #aaa;
+  text-align: right;
+  letter-spacing: 0.04em;
+}
+
+.rf-error {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  color: #c00;
+  letter-spacing: 0.02em;
+}
+
+/* Star selector */
+.star-selector { display: flex; gap: 4px; cursor: pointer; }
+
+.ss-star {
+  font-size: 1.6rem;
+  color: #ddd;
+  transition: color 0.1s;
+  line-height: 1;
+  user-select: none;
+}
+
+.ss-star.active { color: #c8a96a; }
+.ss-star:hover { color: #c8a96a; }
+
+/* File upload */
+.rf-file-group { display: flex; flex-direction: column; gap: 10px; }
+
+.rf-file-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d0c9c0;
+  padding: 10px 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  align-self: flex-start;
+}
+
+.rf-file-btn:hover { border-color: #000; background: #f9f7f4; }
+
+.rf-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rf-preview-item {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border: 1px solid #e8e4df;
+}
+
+.rf-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rf-video-preview {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #e8e4df;
+}
+
+.rf-submit {
+  align-self: flex-start;
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 15px 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+.rf-submit:hover { background: #fff; color: #000; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .product-page-section { flex-direction: column; padding: 32px 24px; gap: 40px; }
+  .product-gallery { width: 100%; position: static; }
+  .product-info-panel { width: 100%; }
+  .related-grid { grid-template-columns: repeat(2, 1fr); }
+  .description-section { padding: 48px 24px; }
+  .description-inner { grid-template-columns: 1fr; gap: 40px; }
+  .related-section { padding: 48px 24px; }
+  .reviews-section { padding: 48px 24px; }
+}
+
+@media (max-width: 768px) {
+  .breadcrumb { padding: 14px 20px; }
+  .product-title { font-size: 1.8rem; }
+  .current-price { font-size: 1.6rem; }
+}
