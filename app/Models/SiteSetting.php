@@ -8,7 +8,10 @@ class SiteSetting extends Model
 
     public static function get(string $key, string $default = ''): string {
         $setting = static::where('key', $key)->first();
-        return $setting ? $setting->value : $default;
+        if (! $setting || trim((string) $setting->value) === '') {
+            return $default;
+        }
+        return (string) $setting->value;
     }
 
     public static function set(string $key, string $value): void {
