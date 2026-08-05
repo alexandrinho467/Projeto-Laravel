@@ -2,6 +2,8 @@
 
 Uma vitrine de e-commerce construída em Laravel 12 com foco em vendas de tênis premium, checkout integrado, painel administrativo e CRM leve.
 
+Inspirado em e-commerces de Dubai, com layout premium, experiência fluida e recursos de venda internacional.
+
 **Autor:** Alexandre Dias Melo da Silva
 
 ## Visão geral
